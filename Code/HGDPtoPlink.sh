@@ -1,6 +1,6 @@
 #!/bin/bash
 #Navigate to HGDP folder
-cd ../Results/MergeGeno/temp/HGDP
+cd ../DataBases/HGDP
 dos2unix HGDP_FinalReport_Forward.txt
 dos2unix HGDP_Map.txt
 dos2unix SampleInformation.txt
