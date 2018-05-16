@@ -2,6 +2,7 @@
 title: Merging HGDP and 1000G
 output: html_document
 ---
+# Merging HGDP and 1000G
 
 ## Requirements
 
@@ -26,3 +27,7 @@ Finally, you'll need to download the chain file that tells liftOver how to conve
 ### 1000G
 
 The 1000G Phase 3 files were downloaded from [here](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/).
+
+## Steps
+
+[Here](Code/2018-05-MergeGenotypes.html) you can see the steps for merging the HGDP and 1000G databases.
