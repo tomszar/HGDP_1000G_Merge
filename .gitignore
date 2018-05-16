@@ -1,2 +1,9 @@
+# Folders
 /Results
-/DataBases
+/Databases
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
