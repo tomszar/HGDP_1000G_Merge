@@ -1,6 +1,6 @@
 # Folders
-/Results
-/Databases
+Results/
+Databases/
 
 # Jupyter Notebook
 .ipynb_checkpoints
