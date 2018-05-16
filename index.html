@@ -122,7 +122,18 @@ $(document).ready(function () {
 </div>
 
 
-<p>Here you can see how to merge the reference samples from HGDP and 1000G. This was all done using python 3.x. <a href="Code/2018-05-MergeGenotypes.html">Here</a> you can see the steps.</p>
+<div id="requirements" class="section level2">
+<h2>Requirements</h2>
+<p>Here you can see how to merge the reference samples from HGDP and 1000G. <a href="Code/2018-05-MergeGenotypes.html">Here</a> you can see the steps. You’ll need <a href="https://www.python.org/downloads/">python 3.x</a>. I recommend using <a href="https://www.anaconda.com/download/">Anaconda</a>. Also, you’ll need <a href="https://www.cog-genomics.org/plink2">plink</a>, <a href="https://vcftools.github.io/index.html">vcftools</a>, and <a href="https://samtools.github.io/bcftools/bcftools.html">bcftools</a>. I recommend using the <a href="https://bioconda.github.io/">bioconda</a> channel to install them. The script assumes that you have all of these in your path.</p>
+<div id="hgdp" class="section level3">
+<h3>HGDP</h3>
+<p>The HGDP Stanford files can be downloaded from <a href="http://hagsc.org/hgdp/files.html">here</a>. You will also need to download the Sample Information from <a href="https://web.stanford.edu/group/rosenberglab/data/rosenberg2006ahg/SampleInformation.txt">here</a>. The bash script <code>HGDPtoPlink.sh</code> was modified from <a href="http://www.harappadna.org/2011/02/hgdp-to-ped-conversion/">here</a>. Finally, because 1000G uses the hg19 reference, we’ll need to liftover the HGDP samples. We’ll use the <a href="http://genome.ucsc.edu/cgi-bin/hgLiftOver">USCS liftOver</a>, which can also be installed through <a href="https://bioconda.github.io/recipes/ucsc-liftover/README.html">bioconda</a>. We’ll use <a href="https://github.com/sritchie73/liftOverPlink">liftOverPlink</a> as wrapper to work with plink files. Finally, you’ll need to download the chain file that tells liftOver how to convert between hg18 to hg19 from <a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg18/liftOver/hg18ToHg19.over.chain.gz">here</a>.</p>
+</div>
+<div id="g" class="section level3">
+<h3>1000G</h3>
+<p>The 1000G Phase 3 files were downloaded from <a href="ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/">here</a>.</p>
+</div>
+</div>
 
 
 
