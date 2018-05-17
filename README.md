@@ -26,6 +26,14 @@ The script will assume that all of the following programs are in your path.
 - [Bcftools](https://samtools.github.io/bcftools/bcftools.html): to install it using [bioconda](https://bioconda.github.io/recipes/bcftools/README.html) use the following command `conda install bcftools`
 - [USCS liftOver](http://genome.ucsc.edu/cgi-bin/hgLiftOver): to install it using [bioconda](https://bioconda.github.io/recipes/ucsc-liftover/README.html) use the following command `conda install ucsc-liftover`
 
+To ease the process, there is a conda environment file in `Code/mergeref.yml`. 
+With anaconda already installed you can create the same environment used to run the script:
+
+```
+conda env create -f mergeref.yml
+source activate mergeref
+```
+
 ## Files to download
 
 In the `DataBases` folder you'll need to download the respective files.
