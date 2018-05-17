@@ -1,29 +1,41 @@
 # Merging HGDP and 1000G
 
-To follow the steps you can interactively run the python notebook under the `Code` folder. 
-First, go to the `DataBases` folder, and read the instructions of what needs to be downloaded on each (both the `HGDP` and the `1000G` folders).
-After everything has been downloaded, you can start running the [script](https://nbviewer.jupyter.org/github/tomszar/HGDP_1000G_Merge/blob/master/Code/2018-05-MergeGenotypes.ipynb).
+This repo will take you through the steps to merge the HGDP and 1000G reference files into a single plink binary file.
+Once the repo has been downloaded make sure that you meet all of the requirements, and download the necessary files in their respective folders.
+To do that, first go to the `DataBases` folder, and read the README files indicating what needs to be downloaded on each (both the `HGDP` and the `1000G` folders).
+After everything has been downloaded, you can start running the [script](https://nbviewer.jupyter.org/github/tomszar/HGDP_1000G_Merge/blob/master/Code/2018-05-MergeGenotypes.ipynb), located in the `Code` folder. 
+This is a python notebook, so you can interactively run it, and modify it to your needs.
+In summary the script will follow these steps:
+- Transform the HGDP into plink files
+- LifOver the HGDP from hg18 to hg19
+- Extract only the SNPs found in the HGDP from the 1000G vcf files
+- Concatenate the different chromosomes and export to plink files
+- Merge the HGDP and 1000G
 
 ## Requirements
 
-This script was ran on a Linux machine, using Ubuntu 18.04. 
-You'll need [python 3.x](https://www.python.org/downloads/). 
-I recommend installing python 3.x using [Anaconda](https://www.anaconda.com/download/). 
-Also, you'll need [plink](https://www.cog-genomics.org/plink2), [vcftools](https://vcftools.github.io/index.html), and [bcftools](https://samtools.github.io/bcftools/bcftools.html). 
-I recommend using the [bioconda](https://bioconda.github.io/) channel to install them through Anaconda as well.
+This script was ran on a Linux machine, using Ubuntu 18.04.
+You will need the following programs:
+- [Python 3.x](https://www.python.org/downloads/): I recommend installing python 3.x using [Anaconda](https://www.anaconda.com/download/). 
+For the following ones, you can use the [bioconda](https://bioconda.github.io/) channel to install them through Anaconda.
 To do that, once you've installed Anaconda follow the instructions in [here](https://bioconda.github.io/).
-Finally, you'll need the [USCS liftOver](http://genome.ucsc.edu/cgi-bin/hgLiftOver), which can also be installed through [bioconda](https://bioconda.github.io/recipes/ucsc-liftover/README.html).
-The script assumes that you have all of these in your path.
+The script will assume that all of the following programs are in your path.
+- [Plink](https://www.cog-genomics.org/plink2): to install it using [bioconda](https://bioconda.github.io/recipes/plink/README.html) use the following command `conda install plink`
+- [Vcftools](https://vcftools.github.io/index.html): to install it using [bioconda](https://bioconda.github.io/recipes/vcftools/README.html) use the following command `conda install vcftools`
+- [Bcftools](https://samtools.github.io/bcftools/bcftools.html): to install it using [bioconda](https://bioconda.github.io/recipes/bcftools/README.html) use the following command `conda install bcftools`
+- [USCS liftOver](http://genome.ucsc.edu/cgi-bin/hgLiftOver): to install it using [bioconda](https://bioconda.github.io/recipes/ucsc-liftover/README.html) use the following command `conda install ucsc-liftover`
+
+## Files to download
+
+In the `DataBases` folder you'll need to download the respective files.
+In each folder (`HGDP` and `1000G`) there is a README file with the same information.
 
 ### HGDP
 
+Download the following files and paste them in the `DataBases/HGDP` folder.
 The HGDP Stanford files can be downloaded from [here](http://hagsc.org/hgdp/files.html).
 You will also need to download the Sample Information from [here](https://web.stanford.edu/group/rosenberglab/data/rosenberg2006ahg/SampleInformation.txt).
-Because 1000G uses the hg19 reference, we'll need to liftover the HGDP samples. 
-We'll use [liftOverPlink](https://github.com/sritchie73/liftOverPlink) as wrapper to work with plink files.
-Those files are already in the `Code` folder.
 Finally, you'll need to download the chain file that tells liftOver how to convert between hg18 to hg19 from [here](http://hgdownload.cse.ucsc.edu/goldenPath/hg18/liftOver/hg18ToHg19.over.chain.gz).
-The bash script `HGDPtoPlink.sh` was modified from [here](http://www.harappadna.org/2011/02/hgdp-to-ped-conversion/), which is already in the `Code` folder.
 
 ### 1000G
 
