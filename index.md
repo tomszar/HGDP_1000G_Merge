@@ -17,7 +17,8 @@ In summary the script will follow these steps:
 This script was ran on a Linux machine, using Ubuntu 18.04.
 You will need the following programs:
 - [Python 3.x](https://www.python.org/downloads/): I recommend installing python 3.x using [Anaconda](https://www.anaconda.com/download/). 
-For the following ones, you can use the [bioconda](https://bioconda.github.io/) channel to install them through Anaconda.
+
+For the following programs, you can use the [bioconda](https://bioconda.github.io/) channel to install them through Anaconda.
 To do that, once you've installed Anaconda follow the instructions in [here](https://bioconda.github.io/).
 The script will assume that all of the following programs are in your path.
 - [Plink](https://www.cog-genomics.org/plink2): to install it using [bioconda](https://bioconda.github.io/recipes/plink/README.html) use the following command `conda install plink`
@@ -39,6 +40,7 @@ Finally, you'll need to download the chain file that tells liftOver how to conve
 
 ### 1000G
 
+Download the following files and and paste them in the `DataBases/1000G` folder.
 The 1000G Phase 3 files can be downloaded from [here](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/).
 
 ## Steps
