@@ -31,7 +31,7 @@ With anaconda already installed you can create the same environment used to run 
 
 ```
 conda env create -f mergeref.yml
-source activate mergeref
+conda activate mergeref
 ```
 
 ## Files to download
@@ -44,7 +44,8 @@ In each folder (`HGDP` and `1000G`) there is a README file with the same informa
 Download the following files and paste them in the `DataBases/HGDP` folder.
 The HGDP Stanford files can be downloaded from [here](http://hagsc.org/hgdp/files.html).
 You will also need to download the Sample Information from [here](https://web.stanford.edu/group/rosenberglab/data/rosenberg2006ahg/SampleInformation.txt).
-Finally, you'll need to download the chain file that tells liftOver how to convert between hg18 to hg19 from [here](http://hgdownload.cse.ucsc.edu/goldenPath/hg18/liftOver/hg18ToHg19.over.chain.gz).
+You'll need to download the chain file that tells liftOver how to convert between hg18 to hg19 from [here](http://hgdownload.cse.ucsc.edu/goldenPath/hg18/liftOver/hg18ToHg19.over.chain.gz).
+Finally, you'll need to download the information with the SNP RSID and their chromosome and position, as indicated in the respective README file.
 
 ### 1000G
 
